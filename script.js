@@ -1,8 +1,6 @@
-document
-	.getElementById('scrollBtn')
-	.addEventListener('click', function (event) {
-		event.preventDefault();
+document.getElementById('scrollBtn').addEventListener('click', function (event) {
+	event.preventDefault();
 
-		const content = document.getElementById('content');
-		content.scrollIntoView({ behavior: 'smooth' });
-	});
+	const content = document.getElementById('content');
+	content.scrollIntoView({ behavior: 'smooth' });
+});
