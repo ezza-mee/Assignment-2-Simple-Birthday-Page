@@ -25,24 +25,100 @@ body {
 	z-index: -9999;
 }
 
+.bg-container {
+	position: relative;
+	width: 100%;
+	height: 200vh;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.balloon-container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 200vh;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.balloon {
+	position: absolute;
+	bottom: 0;
+	width: 200px;
+	z-index: -1;
+	animation: floatBalloon 10s ease-in-out infinite;
+}
+
+.balloon:nth-child(1) {
+	left: 10%;
+	animation-duration: 7s;
+	animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+	left: 25%;
+	animation-duration: 10s;
+	animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+	left: 70%;
+	animation-duration: 8s;
+	animation-delay: 4.5s;
+}
+
+.balloon:nth-child(4) {
+	left: 5%;
+	animation-duration: 7s;
+	animation-delay: 3s;
+}
+
+.balloon:nth-child(5) {
+	left: 50%;
+	animation-duration: 10s;
+	animation-delay: 2s;
+}
+
+.balloon:nth-child(6) {
+	left: 80%;
+	animation-duration: 8s;
+	animation-delay: 4s;
+}
+
+@keyframes floatBalloon {
+	0% {
+		transform: translateY(100vh);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(0);
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-200vh);
+		opacity: 0;
+	}
+}
+
 /* Header-Start */
 
 .container-header {
+	display: flex;
+	justify-content: center;
 	height: 100vh;
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
-	background-image: url(img/ballon.png);
-	z-index: 20;
 	transition: 0.5s ease-in;
 }
 
 .wrapper-header {
 	display: flex;
-	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	z-index: -10;
 }
 
 .content-header {
@@ -53,6 +129,7 @@ body {
 	width: 90%;
 	max-width: 800px;
 	height: auto;
+	z-index: 15;
 }
 
 .container-header .text-header {
@@ -82,6 +159,7 @@ body {
 	transition: 0.5s ease-in;
 	background-size: 200% 100%;
 	background-image: linear-gradient(to right, var(--cpink) 50%, #83b4ff 50%);
+	z-index: 15;
 }
 
 .button-header a {
@@ -100,14 +178,9 @@ body {
 
 /* Content-Start */
 .container-content {
-	height: auto;
-	z-index: -10;
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
-	background-image: url(img/ballon.png);
 	transition: 0.5s ease-in;
 	padding: 20px;
+	z-index: 15;
 }
 
 .container-content .wrapper-content {
@@ -146,7 +219,11 @@ body {
 }
 
 h5 {
-	margin-top: 5px;
+	margin-top: 15px;
+}
+
+p {
+	margin-top: 10px;
 }
 
 /* Content-End */
